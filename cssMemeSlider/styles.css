@@ -12,8 +12,6 @@ section {
 }
 
 
-
-
 .slider input[type=radio] {
     display: none;
 }
@@ -27,6 +25,8 @@ section {
 .slider-bottom {
     display: flex;
     justify-content: space-between;
+    align-content: center;
+
 }
 
 .slider-slides {
@@ -37,10 +37,10 @@ section {
 
 .slider-text {
     width: 50%;
-    transition: opacity 0.8s ease;
+    display: none;
     opacity: 0; 
     visibility: hidden; 
-    display: none;
+    transition: opacity 2.5s ease;
 }
 
 .slider-text p {
@@ -59,23 +59,36 @@ section {
 
 .slider-controls label {
     display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 0 3px;
+    width: 7px;
+    height: 7px;
+    margin: 0 4px 4px 4px;
+    padding: 0;
     background-color: #cccccc;
     border: 4px solid white;
     border-radius: 50%;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
-    transition: background-color 0.8s;
+    transition: background-color 0.8s, transform 0.2s;
     cursor: pointer;
 }
+
+.slider-controls label:hover {
+    transform: scale(1.2); /* Увеличиваем размер при наведении */
+}
+
+/* Эффект нажатия */
+.slider-controls label:active {
+    transform: scale(0.8); /* Уменьшаем размер при нажатии */
+}
+
 
 #btn-1:checked ~ .slider-controls label[for="btn-1"],
 #btn-2:checked ~ .slider-controls label[for="btn-2"],
 #btn-3:checked ~ .slider-controls label[for="btn-3"],
 #btn-4:checked ~ .slider-controls label[for="btn-4"] {
 
-    background-color: #666666;
+    background-color: #1b1a1a;
+    transform: scale(1.2); /* Увеличиваем размер активного контрола */
+    cursor: default;
 }
 
 /* Ваши текущие стили остаются без изменений */
@@ -101,7 +114,7 @@ section {
 #btn-2:checked ~ .slider-inner #text-2,
 #btn-3:checked ~ .slider-inner #text-3,
 #btn-4:checked ~ .slider-inner #text-4 {
+    display: block;   
     opacity: 1; 
     visibility: visible; 
-    display: block;
 }
