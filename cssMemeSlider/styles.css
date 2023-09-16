@@ -20,6 +20,13 @@ section {
 
 .slider-inner {
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-bottom {
+    display: flex;
+    justify-content: space-between;
 }
 
 .slider-slides {
@@ -29,13 +36,15 @@ section {
 }
 
 .slider-text {
-    width: 400%;
-    transition: transform 0.8s ease;
-    display: flex;
+    width: 50%;
+    transition: opacity 0.8s ease;
+    opacity: 0; 
+    visibility: hidden; 
+    display: none;
 }
 
 .slider-text p {
-    width: 70vw;
+    width: 50vw;
 }
 
 .slider-slides img {
@@ -71,22 +80,28 @@ section {
 
 /* Ваши текущие стили остаются без изменений */
 
-#btn-1:checked ~ .slider-inner .slider-slides,
-#btn-1:checked ~ .slider-inner .slider-text {
+
+#btn-1:checked ~ .slider-inner .slider-slides {
     transform: translate(0);
 }
 
-#btn-2:checked ~ .slider-inner .slider-slides,
-#btn-2:checked ~ .slider-inner .slider-text {
+#btn-2:checked ~ .slider-inner .slider-slides {
     transform: translate(-70vw);
 }
 
-#btn-3:checked ~ .slider-inner .slider-slides,
-#btn-3:checked ~ .slider-inner .slider-text {
+#btn-3:checked ~ .slider-inner .slider-slides {
     transform: translate(-140vw);
 }
 
-#btn-4:checked ~ .slider-inner .slider-slides,
-#btn-4:checked ~ .slider-inner .slider-text {
+#btn-4:checked ~ .slider-inner .slider-slides {
     transform: translate(-210vw);
+}
+
+#btn-1:checked ~ .slider-inner #text-1,
+#btn-2:checked ~ .slider-inner #text-2,
+#btn-3:checked ~ .slider-inner #text-3,
+#btn-4:checked ~ .slider-inner #text-4 {
+    opacity: 1; 
+    visibility: visible; 
+    display: block;
 }
