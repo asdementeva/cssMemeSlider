@@ -72,12 +72,12 @@ section {
 }
 
 .slider-controls label:hover {
-    transform: scale(1.2); /* Увеличиваем размер при наведении */
+    transform: scale(1.2); 
 }
 
 /* Эффект нажатия */
 .slider-controls label:active {
-    transform: scale(0.8); /* Уменьшаем размер при нажатии */
+    transform: scale(0.8); 
 }
 
 
@@ -87,11 +87,11 @@ section {
 #btn-4:checked ~ .slider-controls label[for="btn-4"] {
 
     background-color: #1b1a1a;
-    transform: scale(1.2); /* Увеличиваем размер активного контрола */
+    transform: scale(1.2); 
     cursor: default;
 }
 
-/* Ваши текущие стили остаются без изменений */
+
 
 
 #btn-1:checked ~ .slider-inner .slider-slides {
@@ -117,4 +117,21 @@ section {
     display: block;   
     opacity: 1; 
     visibility: visible; 
+}
+
+
+@media(max-width: 768px)  {
+    
+    .slider-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-content: space-around;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .slider-text p {
+        width: 50vw;
+        margin-left: -125px;
+    }
 }
