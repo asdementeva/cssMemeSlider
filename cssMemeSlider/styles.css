@@ -73,11 +73,13 @@ section {
 
 .slider-controls label:hover {
     transform: scale(1.2); 
+    background-color: #ec1010;
 }
 
 /* Эффект нажатия */
 .slider-controls label:active {
     transform: scale(0.8); 
+    background-color: #ec1010;
 }
 
 
@@ -86,7 +88,7 @@ section {
 #btn-3:checked ~ .slider-controls label[for="btn-3"],
 #btn-4:checked ~ .slider-controls label[for="btn-4"] {
 
-    background-color: #1b1a1a;
+    background-color: #ec1010;
     transform: scale(1.2); 
     cursor: default;
 }
