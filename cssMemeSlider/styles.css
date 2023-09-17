@@ -134,6 +134,7 @@ section {
 
     .slider-text p {
         width: 50vw;
-        margin-left: -125px;
+        margin-left: -16.28vw;
+        font-size: 12px;
     }
 }
